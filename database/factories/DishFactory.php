@@ -21,6 +21,7 @@ class DishFactory extends Factory
             'user_id'       => User::factory(),
             'name'          => fake()->words(3, true),
             'description'   => fake()->paragraph(),
+            'images'        => fake()->imageUrl(640, 480, 'dish', true),
             'region'        => fake()->country(),
             'type'          => fake()->randomElement(['A', 'C', 'H', 'X']),
         ];

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // http:localhost:8000/api/dish/{id}/delete
+// http:localhost:8000/api/dish/{id}/edit
+// http:localhost:8000/api/user/{id}/delete
 // universal resource locator
 // dish
 // users
