@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 // users
 // category
 
-Route::apiResource('/dishes', DishController::class);
+Route::middleware('auth:sanctum')->apiResource('/dishes', DishController::class);
 
 
-Route::get('/user', function (Request $request) {
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
