@@ -1,7 +1,5 @@
 # Recipe App
 
-**Tier:** 1-Beginner
-
 You might not have realized this, but recipes are nothing more than culinary algorithms. Like programs, recipes are a series of imperative steps which, if followed correctly, result in a tasty dish.
 
 The objective of the Recipe app is to help the user manage recipes in a way that will make them easy to follow.
