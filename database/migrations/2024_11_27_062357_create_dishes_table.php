@@ -18,7 +18,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('images');
             $table->string('region');
-            $table->string('type');
+            $table->string('meal_type');
+            $table->string('level');
+            $table->boolean('is_favorite')->default(false);
             $table->timestamps();
         });
     }

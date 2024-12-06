@@ -23,7 +23,9 @@ class DishFactory extends Factory
             'description'   => fake()->paragraph(),
             'images'        => fake()->imageUrl(640, 480, 'dish', true),
             'region'        => fake()->country(),
-            'type'          => fake()->randomElement(['A', 'C', 'H', 'X']),
+            'meal_type'     => fake()->randomElement(['B', 'L', 'SR', 'SK']),
+            'level'         => fake()->randomElement(['B', 'I', 'A']),
+            'is_favorite'   => rand(0, 1),
         ];
     }
 }
