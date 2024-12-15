@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     use ApiResponses;
+
     public function login(LoginUserRequest $request) {
         
         if (!Auth::attempt($request->only('email', 'password'))) {
@@ -24,16 +25,18 @@ class AuthController extends Controller
         return $this->ok(
             'Authenticated',
             [
-                'token' => $user->createToken('API token for ' . $user->email)->plainTextToken
+                'token' => $user->createToken('API token for ' . $user->email,
+                ['*'],
+                now()->addMonth())->plainTextToken
+                // now()->addSeconds(10))->plainTextToken
             ]
             );
     }
 
-    // public function login(ApiLoginRequest $request) {
-    //     return $this->ok($request->get('email'));
-    // }
+    public function logout(Request $request) {
+        $request->user()->currentAccessToken()->delete();
 
-    // public function register() {
-    //     return $this->ok('registered');
-    // }
+        return $this->ok('');
+    }
+
 }
